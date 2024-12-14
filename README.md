@@ -1,113 +1,70 @@
-# Credit Card Fraud Detection
+# Credit Card Fraud Detection 🚨💳
 
-## Objective
-Detect fraudulent transactions in credit card data using machine learning techniques. This project leverages data preprocessing, feature scaling, and classification algorithms to accurately identify fraud while minimizing false positives.
+This project focuses on detecting fraudulent credit card transactions using machine learning techniques. It uses a dataset containing credit card transactions, where each transaction is labeled as either 'Fraud' or 'Not Fraud'. The goal is to train a model to predict fraud based on transaction features.
 
----
+## Table of Contents
+- [Overview](#overview)
+- [Requirements](#requirements)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Results](#results)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Dataset
-- **Source:** [Kaggle Credit Card Fraud Detection Dataset](https://www.kaggle.com/mlg-ulb/creditcardfraud)
-- **Description:** Contains 284,807 transactions with 492 fraud cases (highly imbalanced dataset).
-- **Attributes:** 30 numerical features (V1-V28, Amount, Time) and the target variable (`Class`):
-  - `Class = 1`: Fraudulent
-  - `Class = 0`: Non-fraudulent
+## Overview
+In this project, we use a **Random Forest Classifier** to classify credit card transactions as fraudulent or not. The project includes steps like:
+- Data Preprocessing
+- Model Training
+- Evaluation (Confusion Matrix, Classification Report, ROC-AUC)
+- Feature Importance Analysis
 
----
+## Requirements 📦
+The following libraries are required to run this project:
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- scikit-learn
 
-## Project Workflow
-1. **Data Preprocessing**
-   - Handled class imbalance using SMOTE.
-   - Scaled numerical features using `StandardScaler`.
-   - Splitted data into training and testing sets.
+## Getting Started 🚀
 
-2. **Model Training**
-   - Algorithms: Logistic Regression, Random Forest, XGBoost.
-   - Used GridSearchCV for hyperparameter tuning.
+### Prerequisites
+- Python 3.8 or higher
+- Required libraries installed (`pip install -r requirements.txt`)
 
-3. **Evaluation**
-   - Metrics: ROC-AUC score, precision, recall, F1-score.
-   - Plotted confusion matrix, feature importance, and ROC curve.
-
-4. **Results**
-   - Achieved a high ROC-AUC score of **0.99** with XGBoost.
-
----
-
-## Results
-### Confusion Matrix
-![Confusion Matrix](images/confusion_matrix.png)
-
-### ROC Curve
-![ROC Curve](images/roc_curve.png)
-
-### Feature Importance
-![Feature Importance](images/feature_importance.png)
-
----
-
-## Installation
-1. Clone this repository:
+### Installation
+1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/credit-card-fraud-detection.git
-   ```
-
-2. Navigate to the project directory:
-   ```bash
-   cd credit-card-fraud-detection
-   ```
-
-3. Install dependencies:
+   git clone https://github.com/QuantumCoderrr/CreditCardFraudDetection.git
+   cd CreditCardFraudDetection
+2. Install dependencies:
    ```bash
    pip install -r requirements.txt
-   ```
+   
+## Results 📊
+Below are the visuals showing the **Confusion Matrix** and **Feature Importance**.
 
-4. Download the dataset:
-   - Place `creditcard.csv` in the `data/` folder.
+### Confusion Matrix
+The confusion matrix visualizes the performance of the classification model, showing the true positives, true negatives, false positives, and false negatives.
 
----
+![Confusion Matrix](images/confusion_matrix.png)
 
-## Usage
-### Run the Jupyter Notebook
-1. Launch Jupyter Notebook:
-   ```bash
-   jupyter notebook
-   ```
-2. Open and execute the notebook in `notebooks/fraud_detection.ipynb`.
+### Feature Importance
+Feature importance indicates the relative importance of each feature in the model's decision-making process. Higher values indicate features that play a greater role in determining the prediction.
 
-### Modular Scripts
-- Preprocess data:
-  ```bash
-  python src/preprocess.py
-  ```
-- Train and evaluate models:
-  ```bash
-  python src/model.py
-  ```
-- Generate evaluation metrics:
-  ```bash
-  python src/evaluation.py
-  ```
+![Feature Importance](images/feature_importance.png)
+
+## Dataset 📂
+The dataset used for this project can be accessed via the following Google Drive link:  
+[Credit Card Fraud Detection Dataset](https://drive.google.com/file/d/15ky1Zn1BTtSR2GCHJCPSVEMtmIO4wXPl/view?usp=drive_link)
+
+## Contributing 🤝
+We welcome contributions! Please follow the [contributing guidelines](CONTRIBUTING.md) to submit changes.
+
+## License 📝
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## Technologies Used
-- Python: 3.9
-- Libraries:
-  - `pandas`, `numpy` for data manipulation
-  - `matplotlib`, `seaborn` for visualization
-  - `scikit-learn`, `imbalanced-learn`, `xgboost` for machine learning
+Thanks for checking out the project! Let's work together to make fraud detection more efficient! 🚀
 
----
-
-## Contributing
-Feel free to submit issues or pull requests. Contributions are welcome!
-
----
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
----
-
-## Acknowledgments
-- Kaggle dataset: ULB Machine Learning Group.
